@@ -2,7 +2,7 @@ name: Simple Usage
 
 on: push
 
-name: Example README.md to pdf
+
 jobs:
   build:
     name: Upload slides
