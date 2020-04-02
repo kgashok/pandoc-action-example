@@ -13,4 +13,8 @@ jobs:
       - name: Pandoc Document Converter
         uses: Ender-events/pandoc@master
         with:
-          args: '-s -o README.pdf README.md'
+          args: '-s -o t3.md book.tex'
+          
+      - uses: actions/upload-artifact@v2
+        with: 
+          name: t3.md
