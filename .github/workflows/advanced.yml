@@ -13,5 +13,5 @@ jobs:
           args: "--standalone --output=output/thinkpython.md book.tex"
       - uses: actions/upload-artifact@master
         with:
-          name: output
-          path: output
+          name: thinkpython.md
+          path: output    
