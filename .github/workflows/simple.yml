@@ -3,13 +3,14 @@ name: Simple Usage
 on: push
 
 jobs:
-  convert_via_pandoc:
+  convert_via_latex_pandoc:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
       - run: mkdir output        
-      - uses: actions/checkout@master
-      - uses: Ender-events/pandoc@master
+      - uses: actions/checkout@v2
+      - name: Pandox with Latex
+      - uses: Ender-events/pandoc@v1
         with:
           args: '-s -o t3.md book.tex'         
       - uses: action/upload-artifact@master
