@@ -3,7 +3,7 @@ name: Simple Usage
 on: push
 
 jobs:
-  convert_via_latex_pandoc:
+  build:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
