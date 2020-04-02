@@ -4,24 +4,18 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    name: Using Latex Pandoc 
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: mkdir output        
-      - uses: Ender-events/pandoc@v1
-        with:
-          args: '-s -o output/t3.md book.tex'         
-      - uses: action/upload-artifact@master
-        with: 
-          name: t3.md
-          path: output
+      uses: actions/checkout@master
+      run: mkdir output        
+      
+      uses: Ender-events/pandoc@master  
+      with:
+        args: '-s -o output/t3.md book.tex'         
+      uses: action/upload-artifact@master
+      with: 
+        name: t3.md
+        path: output
                     
-      - uses: Ender-events/pandoc@master
-        with:
-          args: '-s -o output/t3.html book.tex'
-          
-      - uses: action/upload-artifact@master
-        with: 
-          name: t3.html
-          path: output
             
