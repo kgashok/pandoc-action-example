@@ -9,4 +9,4 @@ jobs:
       - uses: actions/checkout@v2
       - uses: docker://pandoc/latex:2.9
         with: # needs a README in your repo root!
-          args: "--standalone --output=output/thinkpython.md book.tex"
+          args: "--standalone --output=thinkpython.md book.tex"
