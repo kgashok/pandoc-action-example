@@ -14,4 +14,12 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: thinkpython.md
-          path: output    
+          path: output   
+          
+  download_to_repo:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/download-artifact@master
+        with:
+          name: thinkpython.md
