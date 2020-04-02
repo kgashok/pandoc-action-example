@@ -6,6 +6,25 @@ jobs:
   convert_via_pandoc:
     runs-on: ubuntu-18.04
     steps:
-      - uses: docker://pandoc/core:2.9
+      - uses: actions/checkout@v2
+      - run: mkdir output
+        
+      - uses: actions/checkout@master
+      - name: Pandoc Document Converter
+      - uses: Ender-events/pandoc@master
         with:
-          args: "--help" # gets appended to pandoc command
+          args: '-s -o t3.md book.tex'         
+      - uses: action/upload-artifact@master
+        with: 
+          name: t3.md
+          path: output
+                    
+      - uses: Ender-events/pandoc@master
+        with:
+          args: '-s -o t3.html book.text'
+          
+      - uses: action/upload-artifact@master
+        with: 
+          name: t3.html
+          path: output
+            
