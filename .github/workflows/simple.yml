@@ -7,8 +7,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v2
-      - run: mkdir output
-        
+      - run: mkdir output        
       - uses: actions/checkout@master
       - name: Pandoc Document Converter
       - uses: Ender-events/pandoc@master
@@ -21,7 +20,7 @@ jobs:
                     
       - uses: Ender-events/pandoc@master
         with:
-          args: '-s -o t3.html book.text'
+          args: '-s -o t3.html book.tex'
           
       - uses: action/upload-artifact@master
         with: 
