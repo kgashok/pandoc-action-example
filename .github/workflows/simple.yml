@@ -14,7 +14,7 @@ jobs:
         uses: Ender-events/pandoc@master
         with:
           args: '-s -o t3.md book.tex'
-          
+
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1.0.0
@@ -35,4 +35,3 @@ jobs:
           asset_path: ./t3.md
           asset_name: t3.md
           asset_content_type: application/text
-          
