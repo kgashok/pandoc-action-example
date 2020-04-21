@@ -10,5 +10,5 @@ jobs:
         with:
           args: >- # allows you to break string into multiple lines
             --standalone
-            --output=thinkpython.md
-            thinkpython.pdf
+            --output=chapter11.md
+            Solution_Chapter_11.pdf
